@@ -1,26 +1,16 @@
 package org.edu.ifsc.Java_Grid_F1;
 
 public class Piloto{
-    private final String _nome;
-    private final String _equipe;
-    private final long _tempoDeCorrida;
+    final String _nome;
+    final String _equipe;
+    final int _pontos;
 
-    public Piloto(String _nome, String _equipe, long _tempoDeCorrida) {
+    public Piloto( String _nome, String _equipe) {
         this._nome = _nome;
         this._equipe = _equipe;
-        this._tempoDeCorrida = _tempoDeCorrida;
+        this._pontos = 0;
     }
 
-    public String get_nome() {
-        return _nome;
-    }
 
-    public String get_equipe() {
-        return _equipe;
-    }
-
-    public long get_tempoDeCorrida() {
-        return _tempoDeCorrida;
-    }
 
 }
