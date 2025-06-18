@@ -1,20 +1,32 @@
-- Piloto implements Interface
-  nome
-  equipe
-  tempo de corrida
+Piloto 
+└── nome
+└── numero
+└── equipe
+└── pontos
 
-- classe corrida implements Interface
-    - Número de voltas daquela corrida
-    - Lista de pilotos
+Equipe
+└── nome
+└── pontos
+└── listaDePilotos
 
+Corrida
+└── nome
+└── local
+└── resultados (lista que guarda a posição)
 
-- Resultado implements Interface
-    - Corrida
-    - Chama exibir corrida
+Campeonato 
+└── listaDeCorridas
+└── listaDeEquipes
+└── listaDePilotos
 
-- Interface
-    - Método de exibir o resultado da corrida
-    - Método de obter os dados da corrida (Nº de voltas e de pilotos)
-    - Método de obter informações de cada piloto
-    - Método de calcular as posições
-    - Método de converter String para Long
+Interface
+└── Calcular pontuação da corrida
+└── Calcular pontuação do campeonato equipes
+└── Obter resultado de uma corrida
+└── Exibir resultados corrida (recebe uma corrida e calcula a pontuação dela para poder exibir)
+└── Exibir resultados campeonato (
+recebe uma lista de corridas cadastradas, 
+percorre cara corrida calculando a pontuação de cada corrida,
+no final pega e imprime os resultados para pilotos (cria uma lista de pilotos ordenada) e construtores (cria uma lista de equipes ordenada)
+
+)
