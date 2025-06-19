@@ -27,9 +27,15 @@ public class Main {
         Piloto piloto20 = new Piloto("Carlos Sainz","Williams","55");
 
         Equipe equipe1 = new Equipe("Red bull", List.of(piloto1, piloto2));
-
-
-
+        Equipe equipe2 = new Equipe("Racing Bulls", List.of(piloto3, piloto4));
+        Equipe equipe3 = new Equipe("Ferrari", List.of(piloto5, piloto6));
+        Equipe equipe4 = new Equipe("McLaren", List.of(piloto7, piloto8));
+        Equipe equipe5 = new Equipe("Mercedes", List.of(piloto9, piloto10));
+        Equipe equipe6 = new Equipe("Aston Martin", List.of(piloto11, piloto12));
+        Equipe equipe7 = new Equipe("Alpine", List.of(piloto13, piloto14));
+        Equipe equipe8 = new Equipe("Haas", List.of(piloto15, piloto16));
+        Equipe equipe9 = new Equipe("Sauber (Stake)", List.of(piloto17, piloto18));
+        Equipe equipe10 = new Equipe("Williams", List.of(piloto19, piloto20));
 
     }
 }
