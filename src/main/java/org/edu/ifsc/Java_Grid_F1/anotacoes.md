@@ -1,32 +1,35 @@
-Piloto 
+Classes:
+
+Piloto
 └── nome
 └── numero
-└── equipe
+└── Equipe
 └── pontos
 
 Equipe
 └── nome
 └── pontos
-└── listaDePilotos
+└── Piloto 1
+└── Piloto 2
 
 Corrida
 └── nome
 └── local
 └── resultados (lista que guarda a posição)
 
-Campeonato 
+Campeonato implements interface 
 └── listaDeCorridas
 └── listaDeEquipes
 └── listaDePilotos
+└── Override em todas as funções da interface
 
-Interface
-└── Calcular pontuação da corrida
-└── Calcular pontuação do campeonato equipes
-└── Obter resultado de uma corrida
-└── Exibir resultados corrida (recebe uma corrida e calcula a pontuação dela para poder exibir)
-└── Exibir resultados campeonato (
-recebe uma lista de corridas cadastradas, 
-percorre cara corrida calculando a pontuação de cada corrida,
-no final pega e imprime os resultados para pilotos (cria uma lista de pilotos ordenada) e construtores (cria uma lista de equipes ordenada)
+GerenciadorMenu(classe controladora do sistema geral)
+└── Controlar o menu e as instâncias de campeonato
 
-)
+
+Interface: 
+
+Interface FIA (chamada de métodos apenas)
+└── Calcular pontuações de corrida
+└── Exibir resultado de uma corrida (impressão)
+└── Exibir resultado campeonato

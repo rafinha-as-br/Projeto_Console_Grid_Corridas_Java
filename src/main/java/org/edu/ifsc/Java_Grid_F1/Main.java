@@ -37,5 +37,12 @@ public class Main {
         Equipe equipe9 = new Equipe("Sauber (Stake)", List.of(piloto17, piloto18));
         Equipe equipe10 = new Equipe("Williams", List.of(piloto19, piloto20));
 
+
+        // Vai inicalizar um gerenciadorMenu
+        // Vai gerar um menu (como se já tivesse sido informado as equipes, pilotos e corrida provisóriamente)
+        // Switch case para cada uma das opções do menu
+
+
+
     }
 }

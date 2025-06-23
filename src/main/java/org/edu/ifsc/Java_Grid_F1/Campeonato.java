@@ -2,7 +2,7 @@ package org.edu.ifsc.Java_Grid_F1;
 
 import java.util.List;
 
-public class Campeonato implements InterfaceCorrida {
+public class Campeonato implements InterfaceFIA {
     //Lista que armazena cada corrida
     List<Corrida> listadeCorridas;
 
@@ -11,6 +11,8 @@ public class Campeonato implements InterfaceCorrida {
 
     //lista que armazena cada equipe
     List<Equipe> listadeEquipes;
+
+
 
 
 
