@@ -7,3 +7,5 @@ Rafa, é o seguinte guri:
   - Fiz a função de calcular a pontuação da corrida
   - Fiz a função de calcular os resultados do campeonato tanto de piloto como de equipes
   - Falta fazer as partes de impressão e de entrada de dados, bem como um menu pro usuário
+
+- Preciso que o senhor altere a main e remova os erros por conta das alterações que eu fiz
