@@ -9,3 +9,4 @@ Rafa, é o seguinte guri:
   - Falta fazer as partes de impressão e de entrada de dados, bem como um menu pro usuário
 
 - Preciso que o senhor altere a main e remova os erros por conta das alterações que eu fiz
+- A se quiser tentar instanciar um campeonato, colocar umas corridas pra testar, fique a vontade...
