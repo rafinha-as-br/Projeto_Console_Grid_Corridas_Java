@@ -1,3 +1,7 @@
+Base do sistema: O usuário informa equipes, pilotos e resultado de corridas, e irá 
+imprimir o resultado de uma corrida, do campeonato e listas de equipes e pilotos
+
+
 Classes:
 
 Piloto
@@ -16,8 +20,10 @@ Corrida
 └── nome
 └── local
 └── resultados (lista que guarda a posição)
+└── Override em todas as funções da interface
 
-Campeonato implements interface 
+
+Campeonato implements interfaceFIA
 └── listaDeCorridas
 └── listaDeEquipes
 └── listaDePilotos

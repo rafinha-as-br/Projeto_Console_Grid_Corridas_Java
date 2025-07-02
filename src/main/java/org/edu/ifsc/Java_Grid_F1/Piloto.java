@@ -6,13 +6,17 @@ public class Piloto{
     final String _nome;
     final Equipe _equipe;
     final String _numeroPiloto;
-    final int _pontos;
+    int pontos;
 
 
     public Piloto(String _nome, Equipe _equipe, String _numeroPiloto) {
         this._nome = _nome;
         this._equipe = _equipe;
         this._numeroPiloto = _numeroPiloto;
-        this._pontos = 0;
+        this.pontos = 0;
+    }
+
+    public void set_pontos(int pontos) {
+        this.pontos += pontos;
     }
 }
