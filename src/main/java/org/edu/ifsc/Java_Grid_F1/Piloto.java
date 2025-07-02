@@ -4,14 +4,14 @@ import java.util.List;
 
 public class Piloto{
     final String _nome;
-    final Equipe _equipe;
     final String _numeroPiloto;
+    public String equipe;
+    public Equipe _equipe;
     int pontos;
 
 
-    public Piloto(String _nome, Equipe _equipe, String _numeroPiloto) {
+    public Piloto(String _nome, String _numeroPiloto) {
         this._nome = _nome;
-        this._equipe = _equipe;
         this._numeroPiloto = _numeroPiloto;
         this.pontos = 0;
     }

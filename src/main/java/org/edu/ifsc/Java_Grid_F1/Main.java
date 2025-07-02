@@ -1,30 +1,31 @@
 package org.edu.ifsc.Java_Grid_F1;
 
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
-        Piloto piloto1 = new Piloto("Max Verstappen","Red Bull Racing","1");
-        Piloto piloto2 = new Piloto("Yuki Tsunoda","Red Bull Racing","22");
-        Piloto piloto3 = new Piloto("Liam Lawson","Racing Bulls","30");
-        Piloto piloto4 = new Piloto("Isack Hadjar","Racing Bulls","6");
-        Piloto piloto5 = new Piloto("Charles Leclerc","Ferrari","16");
-        Piloto piloto6 = new Piloto("Lewis Hamilton","Ferrari","44");
-        Piloto piloto7 = new Piloto("Lando Norris","McLaren","4");
-        Piloto piloto8 = new Piloto("Oscar Piastri","McLaren","81");
-        Piloto piloto9 = new Piloto("George Russell","Mercedes","63");
-        Piloto piloto10 = new Piloto("Andrea Kimi Antonelli","Mercedes","12");
-        Piloto piloto11 = new Piloto("Fernando Alonso","Aston Martin","14");
-        Piloto piloto12 = new Piloto("Lance Stroll","Aston Martin","18");
-        Piloto piloto13 = new Piloto("Pierre Gasly","Alpine","10");
-        Piloto piloto14 = new Piloto("Jack Doohan","Alpine","7");
-        Piloto piloto15 = new Piloto("Esteban Ocon","Haas","31");
-        Piloto piloto16 = new Piloto("Oliver Bearman","Haas","87");
-        Piloto piloto17 = new Piloto("Nico Hülkenberg","Sauber (Stake)","27");
-        Piloto piloto18 = new Piloto("Gabriel Bortoleto","Sauber (Stake)","5");
-        Piloto piloto19 = new Piloto("Alex Albon","Williams","23");
-        Piloto piloto20 = new Piloto("Carlos Sainz","Williams","55");
+        Piloto piloto1 = new Piloto("Max Verstappen","1");
+        Piloto piloto2 = new Piloto("Yuki Tsunoda","22");
+        Piloto piloto3 = new Piloto("Liam Lawson","30");
+        Piloto piloto4 = new Piloto("Isack Hadjar","6");
+        Piloto piloto5 = new Piloto("Charles Leclerc","16");
+        Piloto piloto6 = new Piloto("Lewis Hamilton","44");
+        Piloto piloto7 = new Piloto("Lando Norris","4");
+        Piloto piloto8 = new Piloto("Oscar Piastri","81");
+        Piloto piloto9 = new Piloto("George Russell","63");
+        Piloto piloto10 = new Piloto("Andrea Kimi Antonelli","12");
+        Piloto piloto11 = new Piloto("Fernando Alonso","14");
+        Piloto piloto12 = new Piloto("Lance Stroll","18");
+        Piloto piloto13 = new Piloto("Pierre Gasly","10");
+        Piloto piloto14 = new Piloto("Jack Doohan","7");
+        Piloto piloto15 = new Piloto("Esteban Ocon","31");
+        Piloto piloto16 = new Piloto("Oliver Bearman","87");
+        Piloto piloto17 = new Piloto("Nico Hülkenberg","27");
+        Piloto piloto18 = new Piloto("Gabriel Bortoleto","5");
+        Piloto piloto19 = new Piloto("Alex Albon","23");
+        Piloto piloto20 = new Piloto("Carlos Sainz","55");
 
         Equipe equipe1 = new Equipe("Red bull", List.of(piloto1, piloto2));
         Equipe equipe2 = new Equipe("Racing Bulls", List.of(piloto3, piloto4));
@@ -37,10 +38,26 @@ public class Main {
         Equipe equipe9 = new Equipe("Sauber (Stake)", List.of(piloto17, piloto18));
         Equipe equipe10 = new Equipe("Williams", List.of(piloto19, piloto20));
 
-
         // Vai inicalizar um gerenciadorMenu
+        Scanner Scan = new Scanner(System.in);
+
+        System.out.println("Equipes no Campionato: ");
+        System.out.println("Red Bull");
+        System.out.println("Racing Bulls");
+        System.out.println("Ferrari");
+        System.out.println("McLaren");
+        System.out.println("Mercedes");
+        System.out.println("Aston Martin");
+        System.out.println("Alpine");
+        System.out.println("Haas");
+        System.out.println("Sauber (Stake)");
+        System.out.println("Williams");
+
+
         // Vai gerar um menu (como se já tivesse sido informado as equipes, pilotos e corrida provisóriamente)
         // Switch case para cada uma das opções do menu
+
+        System.out.println("");
 
 
 
