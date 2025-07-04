@@ -5,7 +5,7 @@ import java.util.List;
 public class Equipe {
     final String nome;
     int pontos;
-    final List<Piloto> listaPilotos;
+    List<Piloto> listaPilotos;
 
     public Equipe(String nome, List<Piloto> listaPilotos) {
         this.nome = nome;
@@ -27,5 +27,9 @@ public class Equipe {
 
     public List<Piloto> getListaPilotos() {
         return listaPilotos;
+    }
+
+    public void setListaPilotos(List<Piloto> listaPilotos) {
+        this.listaPilotos = listaPilotos;
     }
 }
