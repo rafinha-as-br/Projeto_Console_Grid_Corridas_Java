@@ -50,19 +50,10 @@ public class Main {
         equipe9.setListaPilotos(List.of(piloto17, piloto18));
         equipe10.setListaPilotos(List.of(piloto19, piloto20));
         // Vai inicalizar um gerenciadorMenu
-        Scanner Scan = new Scanner(System.in);
+        Scanner menuSanc = new Scanner(System.in);
+        int menu = menuSanc.nextInt();
 
-        System.out.println("Equipes no Campeonato: ");
-        System.out.println("Red Bull");
-        System.out.println("Racing Bulls");
-        System.out.println("Ferrari");
-        System.out.println("McLaren");
-        System.out.println("Mercedes");
-        System.out.println("Aston Martin");
-        System.out.println("Alpine");
-        System.out.println("Haas");
-        System.out.println("Sauber (Stake)");
-        System.out.println("Williams");
+
 
 
         // Vai gerar um menu (como se já tivesse sido informado as equipes, pilotos e corrida provisóriamente)
