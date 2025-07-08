@@ -1,55 +1,58 @@
 package org.edu.ifsc.Java_Grid_F1;
 
-public class GerenciadorMenu implements Main{
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class GerenciadorMenu{
     //implementações de instâncias de campeonato
 
-    do{
-        System.out.println("Escolha uma opção: ");
-        System.out.println("1 - Lista de Circuito");
-        System.out.println("2 - Lista de Equipes");
-        System.out.println("3 - Lista de Pilotos");
+    private Scanner scanner = new Scanner(System.in);
+    public void exibirMenu() {
 
-        switch(menu){
-            case 1:
+        int opcao = -1;
 
-                break;
+        while (opcao != 0){
+            System.out.println("1 - Lista de Circuitos");
+            System.out.println("2 - Campeonato de pilotos");
+            System.out.println("3 - Campeonato de Equipes");
+            System.out.println("4 - ");
+            System.out.println("0 - Sair");
+            System.out.println("Escolha uma opção: ");
+            try {
+                opcao = Integer.parseInt(scanner.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Entrada inválida! Digite um número.");
+                continue;
+            }
 
-            case 2:
-                System.out.println("Red Bull");
-                System.out.println("Racing Bulls");
-                System.out.println("Ferrari");
-                System.out.println("McLaren");
-                System.out.println("Mercedes");
-                System.out.println("Aston Martin");
-                System.out.println("Alpine");
-                System.out.println("Haas");
-                System.out.println("Sauber (Stake)");
-                System.out.println("Williams");
-                break;
+            switch (opcao){
+                case 1:
+                    Corrida.listarGP();
+                    System.out.println("Escolha um GP");
+                    opcao = Integer.parseInt(scanner.nextLine());
+                    while (opcao != 0){
+                        case 1:
+                            System.out.println("1° GP da Austrália - Albert Park");
 
-            case 3:
-                System.out.println("Max Verstappen");
-                System.out.println("Yuki Tsunoda");
-                System.out.println("Liam Lawson");
-                System.out.println("Isack Hadjar");
-                System.out.println("Charles Leclerc");
-                System.out.println("Lewis Hamilton");
-                System.out.println("Lando Norris");
-                System.out.println("Oscar Piastri");
-                System.out.println("George Russell");
-                System.out.println("Andrea Kimi Antonelli");
-                System.out.println("Fernando Alonso");
-                System.out.println("Lance Stroll");
-                System.out.println("Pierre Gasly");
-                System.out.println("Jack Doohan");
-                System.out.println("Esteban Ocon");
-                System.out.println("Oliver Bearman");
-                System.out.println("Nico Hülkenberg");
-                System.out.println("Gabriel Bortoleto");
-                System.out.println("Alex Albon");
-                System.out.println("Carlos Sainz");
-                break;
+                            break;
+                    }
+                    break;
+                case 2:
+                    System.out.println("Campeonato de Pilotos 2025");
+                    Piloto.listarPilotos();
+                    break;
+                case 3:
+                    System.out.println("Campeonato de Equipes 2025");
+                    Equipe.listarEquipes();
+                    break;
+                case 4:
+
+                    break;
+                case 0:
+                    System.out.println("Encerrando programa");
+                    break;
+            }
         }
+        scanner.close();
     }
-
 }

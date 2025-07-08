@@ -32,4 +32,18 @@ public class Equipe {
     public void setListaPilotos(List<Piloto> listaPilotos) {
         this.listaPilotos = listaPilotos;
     }
+
+    public static void listarEquipes(){
+        System.out.println("Red Bull Racing");
+        System.out.println("Racing Bulls");
+        System.out.println("Ferrari");
+        System.out.println("McLaren");
+        System.out.println("Mercedes");
+        System.out.println("Aston Martin");
+        System.out.println("Alpine");
+        System.out.println("Haas");
+        System.out.println("Sauber (Stake)");
+        System.out.println("Williams");
+        System.out.println("");
+    }
 }

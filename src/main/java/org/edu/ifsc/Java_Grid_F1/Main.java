@@ -49,17 +49,15 @@ public class Main {
         equipe8.setListaPilotos(List.of(piloto15, piloto16));
         equipe9.setListaPilotos(List.of(piloto17, piloto18));
         equipe10.setListaPilotos(List.of(piloto19, piloto20));
-        // Vai inicalizar um gerenciadorMenu
-        Scanner menuSanc = new Scanner(System.in);
-        int menu = menuSanc.nextInt();
 
+        // Vai inicalizar um gerenciadorMenu
+        GerenciadorMenu menu = new GerenciadorMenu();
+        menu.exibirMenu();
 
 
 
         // Vai gerar um menu (como se já tivesse sido informado as equipes, pilotos e corrida provisóriamente)
         // Switch case para cada uma das opções do menu
-
-        System.out.println("");
 
 
 
