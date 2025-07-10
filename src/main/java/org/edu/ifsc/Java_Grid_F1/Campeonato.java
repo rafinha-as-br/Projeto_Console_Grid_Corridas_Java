@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Campeonato implements InterfaceFIA {
+
     //Lista que armazena cada corrida
     List<Corrida> listadeCorridas;
 

@@ -37,4 +37,8 @@ public class Corrida{
         System.out.println("");
     }
 
+    public static void cadastroGP(){
+
+    }
+
 }
