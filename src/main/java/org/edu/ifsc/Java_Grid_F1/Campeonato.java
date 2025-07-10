@@ -16,6 +16,11 @@ public class Campeonato implements InterfaceFIA {
     //lista que armazena cada equipe
     List<Equipe> listadeEquipes;
 
+    public Campeonato(List<Corrida> listadeCorridas, List<Piloto> listadePiloto, List<Equipe> listadeEquipes) {
+        this.listadeCorridas = listadeCorridas;
+        this.listadePiloto = listadePiloto;
+        this.listadeEquipes = listadeEquipes;
+    }
 
     @Override
     public void calculaPontuacoesCorrida(Corrida corrida) {

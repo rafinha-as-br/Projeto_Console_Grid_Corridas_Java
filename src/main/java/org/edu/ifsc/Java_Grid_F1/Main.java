@@ -5,6 +5,9 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
+
+        //lista de equipes
+
         Equipe equipe1 = new Equipe("Red bull", new ArrayList<>());
         Equipe equipe2 = new Equipe("Racing Bulls", new ArrayList<>());
         Equipe equipe3 = new Equipe("Ferrari", new ArrayList<>());
@@ -16,27 +19,77 @@ public class Main {
         Equipe equipe9 = new Equipe("Sauber (Stake)", new ArrayList<>());
         Equipe equipe10 = new Equipe("Williams", new ArrayList<>());
 
+        List<Equipe> listaDeEquipes = new ArrayList<>(Arrays.asList(equipe1, equipe2, equipe3, equipe4, equipe5, equipe6, equipe7, equipe8, equipe9, equipe10));
+
+
+        //lista de pilotos
+        List<Piloto> listaPilotos = new ArrayList<>();
+
         Piloto piloto1 = new Piloto("Max Verstappen", equipe1,"1");
+        listaPilotos.add(piloto1);
+
         Piloto piloto2 = new Piloto("Yuki Tsunoda",equipe1,"22");
+        listaPilotos.add(piloto2);
+
         Piloto piloto3 = new Piloto("Liam Lawson",equipe2,"30");
+        listaPilotos.add(piloto3);
+
         Piloto piloto4 = new Piloto("Isack Hadjar",equipe2,"6");
+        listaPilotos.add(piloto4);
+
         Piloto piloto5 = new Piloto("Charles Leclerc",equipe3,"16");
+        listaPilotos.add(piloto5);
+
         Piloto piloto6 = new Piloto("Lewis Hamilton",equipe3,"44");
+        listaPilotos.add(piloto6);
+
         Piloto piloto7 = new Piloto("Lando Norris",equipe4,"4");
+        listaPilotos.add(piloto7);
+
         Piloto piloto8 = new Piloto("Oscar Piastri",equipe4,"81");
+        listaPilotos.add(piloto8);
+
         Piloto piloto9 = new Piloto("George Russell",equipe5,"63");
+        listaPilotos.add(piloto9);
+
         Piloto piloto10 = new Piloto("Andrea Kimi Antonelli",equipe5,"12");
+        listaPilotos.add(piloto10);
+
         Piloto piloto11 = new Piloto("Fernando Alonso",equipe6,"14");
+        listaPilotos.add(piloto11);
+
         Piloto piloto12 = new Piloto("Lance Stroll",equipe6,"18");
+        listaPilotos.add(piloto12);
+
         Piloto piloto13 = new Piloto("Pierre Gasly",equipe7,"10");
+        listaPilotos.add(piloto13);
+
         Piloto piloto14 = new Piloto("Jack Doohan",equipe7,"7");
+        listaPilotos.add(piloto14);
+
         Piloto piloto15 = new Piloto("Esteban Ocon",equipe8,"31");
+        listaPilotos.add(piloto15);
+
         Piloto piloto16 = new Piloto("Oliver Bearman",equipe8,"87");
+        listaPilotos.add(piloto16);
+
         Piloto piloto17 = new Piloto("Nico Hülkenberg",equipe9,"27");
+        listaPilotos.add(piloto17);
+
         Piloto piloto18 = new Piloto("Gabriel Bortoleto",equipe9,"5");
+        listaPilotos.add(piloto18);
+
         Piloto piloto19 = new Piloto("Alex Albon",equipe10,"23");
+        listaPilotos.add(piloto19);
+
         Piloto piloto20 = new Piloto("Carlos Sainz",equipe10,"55");
+        listaPilotos.add(piloto20);
+
         Piloto piloto21 = new Piloto("Franco Colapinto", equipe7,"43");
+        listaPilotos.add(piloto21);
+
+
+
 
         equipe1.setListaPilotos(List.of(piloto1, piloto2));
         equipe2.setListaPilotos(List.of(piloto3, piloto4));
@@ -49,8 +102,14 @@ public class Main {
         equipe9.setListaPilotos(List.of(piloto17, piloto18));
         equipe10.setListaPilotos(List.of(piloto19, piloto20));
 
-        //cadastro dos gps
-        Corrida gp_Autralia = new Corrida(new ArrayList<>(Arrays.asList(
+
+
+        //Criando uma lista de corridas
+        List<Corrida> listaDeCorridas = new ArrayList<>();
+
+
+        //cadastro dos gps a essa lista
+        Corrida gp_Australia = new Corrida("Grande prêmio da australia" ,new ArrayList<>(Arrays.asList(
                 piloto7,
                 piloto1,
                 piloto9,
@@ -72,7 +131,9 @@ public class Main {
                 piloto14,
                 piloto4
         )));
-        Corrida gp_China = new Corrida(new ArrayList<>(Arrays.asList(
+
+        listaDeCorridas.add(gp_Australia);
+        Corrida gp_China = new Corrida("Grande Prêmio da China",new ArrayList<>(Arrays.asList(
                 piloto8,
                 piloto7,
                 piloto9,
@@ -94,7 +155,10 @@ public class Main {
                 piloto6,
                 piloto13
         )));
-        Corrida gp_Japao = new Corrida(new ArrayList<>(Arrays.asList(
+
+        listaDeCorridas.add(gp_China);
+
+        Corrida gp_Japao = new Corrida("Grande Prêmio do Japão" ,new ArrayList<>(Arrays.asList(
                 piloto1,
                 piloto7,
                 piloto8,
@@ -116,7 +180,10 @@ public class Main {
                 piloto18,
                 piloto12
         )));
-        Corrida gp_Bahrein = new Corrida(new ArrayList<>(Arrays.asList(
+
+        listaDeCorridas.add(gp_Japao);
+
+        Corrida gp_Bahrein = new Corrida("Grande Prêmio do Bahrein",new ArrayList<>(Arrays.asList(
                 piloto8,
                 piloto9,
                 piloto7,
@@ -138,7 +205,10 @@ public class Main {
                 piloto20,
                 piloto17
         )));
-        Corrida gp_Arabia_Saudita = new Corrida(new ArrayList<>(Arrays.asList(
+
+        listaDeCorridas.add(gp_Bahrein);
+
+        Corrida gp_Arabia_Saudita = new Corrida("Grande Prêmio da Arábia Saudita",new ArrayList<>(Arrays.asList(
                 piloto8,
                 piloto1,
                 piloto5,
@@ -160,7 +230,10 @@ public class Main {
                 piloto2,
                 piloto13
         )));
-        Corrida gp_Miami = new Corrida(new ArrayList<>(Arrays.asList(
+
+        listaDeCorridas.add(gp_Arabia_Saudita);
+
+        Corrida gp_Miami = new Corrida("Grande Prêmio de Miami",new ArrayList<>(Arrays.asList(
                 piloto8,
                 piloto7,
                 piloto9,
@@ -182,7 +255,10 @@ public class Main {
                 piloto16,
                 piloto14
         )));
-        Corrida gp_Emilia_Romagna = new Corrida(new ArrayList<>(Arrays.asList(
+
+        listaDeCorridas.add(gp_Miami);
+
+        Corrida gp_Emilia_Romagna = new Corrida("Grande Prêmio da Emilia Romagna",new ArrayList<>(Arrays.asList(
                 piloto1,
                 piloto7,
                 piloto8,
@@ -204,7 +280,10 @@ public class Main {
                 piloto10,
                 piloto15
         )));
-        Corrida gp_Monaco = new Corrida(new ArrayList<>(Arrays.asList(
+
+        listaDeCorridas.add(gp_Emilia_Romagna);
+
+        Corrida gp_Monaco = new Corrida("Grande Prêmio de Monte Carlo",new ArrayList<>(Arrays.asList(
                 piloto7,
                 piloto5,
                 piloto8,
@@ -226,7 +305,10 @@ public class Main {
                 piloto11,
                 piloto13
         )));
-        Corrida gp_Espanha = new Corrida(new ArrayList<>(Arrays.asList(
+
+        listaDeCorridas.add(gp_Monaco);
+
+        Corrida gp_Espanha = new Corrida("Grande Prêmio da Espanha",new ArrayList<>(Arrays.asList(
                 piloto8,
                 piloto7,
                 piloto5,
@@ -248,7 +330,10 @@ public class Main {
                 piloto19,
                 piloto12
         )));
-        Corrida gp_Canada = new Corrida(new ArrayList<>(Arrays.asList(
+
+        listaDeCorridas.add(gp_Espanha);
+
+        Corrida gp_Canada = new Corrida("Grande Prêmio do Canadá",new ArrayList<>(Arrays.asList(
                 piloto9,
                 piloto1,
                 piloto10,
@@ -270,7 +355,10 @@ public class Main {
                 piloto3,
                 piloto19
         )));
-        Corrida gp_Austria = new Corrida(new ArrayList<>(Arrays.asList(
+
+        listaDeCorridas.add(gp_Canada);
+
+        Corrida gp_Austria = new Corrida("Grande Prêmio da Áustria", new ArrayList<>(Arrays.asList(
                 piloto7,
                 piloto8,
                 piloto5,
@@ -292,7 +380,10 @@ public class Main {
                 piloto10,
                 piloto20
         )));
-        Corrida gp_Gra_Bretanha = new Corrida(new ArrayList<>(Arrays.asList(
+
+        listaDeCorridas.add(gp_Austria);
+
+        Corrida gp_Gra_Bretanha = new Corrida("Grande Prêmio da Inglaterra",new ArrayList<>(Arrays.asList(
                 piloto7,
                 piloto8,
                 piloto17,
@@ -315,10 +406,12 @@ public class Main {
                 piloto21
         )));
 
-        GerenciadorMenu menu = new GerenciadorMenu(gp_Autralia, gp_China, gp_Japao, gp_Bahrein, gp_Arabia_Saudita, gp_Miami, gp_Emilia_Romagna, gp_Monaco, gp_Espanha, gp_Canada, gp_Austria, gp_Gra_Bretanha);
+        listaDeCorridas.add(gp_Gra_Bretanha);
 
-        // Vai inicalizar um gerenciadorMenu
-        menu.exibirMenu();
+        //Instanciando um campeonato
+        Campeonato campeonatoF1 = new Campeonato(listaDeCorridas, listaPilotos, )
+
+        GerenciadorMenu menu = new GerenciadorMenu()
 
     }
 }
