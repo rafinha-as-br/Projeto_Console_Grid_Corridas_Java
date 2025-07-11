@@ -1,8 +1,12 @@
 package org.edu.ifsc.Java_Grid_F1;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class GerenciadorMenu {
 
@@ -41,14 +45,14 @@ public class GerenciadorMenu {
 
             switch (opcao) {
                 case 1: //função de listar corridas
-                    while (opcao2!=0){
+                    while (opcao2!=900){
                         System.out.println("Opção escolhida: Listar corridas");
                         System.out.println("Escolha o numero da corrida para ver o resultado dessa corrida");
-                        System.out.println("Digite 0 para sair \n");
+                        System.out.println("Digite 900 para sair \n");
                         listarCorridas(campeonato.listadeCorridas);
                         try {
                             opcao2 = Integer.parseInt(scanner.nextLine());
-                            if (opcao2==0){
+                            if (opcao2==900){
                                 break;
                             } else if (opcao2 < 0 || opcao2 > campeonato.listadeCorridas.size()-1){
                                 System.out.println("Entrada inválida! Digite um número válido na lista de corridas!");
@@ -102,68 +106,120 @@ public class GerenciadorMenu {
         scanner.close();
     }
 
-    public void listarCorridas(List<Corrida> listaCorridas){
-        for(int i=0; i<listaCorridas.size(); i++){
-            System.out.println(i + "-" + listaCorridas.get(i).nomeCorrida);
+    public void listarCorridas(List<Corrida> listaCorridas) {
+        FormatadorRelatorios.cabecalho("CALENDÁRIO DE CORRIDAS 2024");
+        FormatadorRelatorios.cabecalho2Colunas("CÓD", "CORRIDA");
+
+        for(int i = 0; i < listaCorridas.size(); i++) {
+            FormatadorRelatorios.linha2Colunas(
+                    (i+1),  // Código numérico
+                    listaCorridas.get(i).nomeCorrida  // Nome completo do GP
+            );
         }
+        FormatadorRelatorios.rodape();
     }
 
     public void resultadoCorrida(Corrida corrida) {
         campeonato.calculaPontuacoesCorrida(corrida);
-        System.out.println("\n\n" + corrida.nomeCorrida);
-        System.out.println("Posição | Número | Nome | Equipe | Pontos");
+
+        FormatadorRelatorios.cabecalho(corrida.nomeCorrida.toUpperCase());
+        FormatadorRelatorios.cabecalho5Colunas("POS", "NÚM", "PILOTO", "EQUIPE", "PTS");
+
         for(int i = 0; i < corrida.resultadoCorrida.size(); i++) {
             Piloto p = corrida.resultadoCorrida.get(i);
-            System.out.printf("%-8d| %-7s| %-20s| %-15s| %d%n",
-                    i+1, p._numeroPiloto, p._nome, p._equipe.nome, p.pontos);
+            FormatadorRelatorios.linha5Colunas(
+                    (i+1),
+                    p._numeroPiloto,
+                    p._nome,
+                    p._equipe.nome,
+                    p.pontos
+            );
         }
-        System.out.println();
+        FormatadorRelatorios.rodape();
     }
 
-    public void listarPilotos(List<Piloto> listaDePilotos){
-        System.out.println("Número | Nome | Equipe ");
-        listaDePilotos.forEach(piloto -> System.out.println(piloto._numeroPiloto + piloto._nome + piloto._equipe));
+    public void listarPilotos(List<Piloto> listaDePilotos) {
+        FormatadorRelatorios.cabecalho("LISTAGEM COMPLETA DE PILOTOS");
+        FormatadorRelatorios.cabecalho5Colunas("#", "NÚMERO", "NOME", "EQUIPE", "PTS");
+
+        listaDePilotos.sort(Comparator.comparing(p -> p._nome));
+
+        for (int i = 0; i < listaDePilotos.size(); i++) {
+            Piloto piloto = listaDePilotos.get(i);
+            FormatadorRelatorios.linha5Colunas(
+                    (i+1),
+                    piloto._numeroPiloto,
+                    piloto._nome,
+                    piloto._equipe.nome,
+                    piloto.pontos
+            );
+        }
+        FormatadorRelatorios.rodape();
     }
 
     public void listarEquipes(List<Equipe> listaDeEquipes) {
-        System.out.println("Nome | Pilotos");
-        listaDeEquipes.forEach(equipe -> {
-            StringBuilder pilotosStr = new StringBuilder();
-            for (Piloto piloto : equipe.listaPilotos) {
-                if (pilotosStr.length() > 0) {
-                    pilotosStr.append(", ");
+        FormatadorRelatorios.cabecalho("LISTAGEM COMPLETA DE EQUIPES");
+        FormatadorRelatorios.cabecalho2Colunas("EQUIPE", "PILOTOS");
+
+        listaDeEquipes.sort(Comparator.comparing(e -> e.nome));
+
+        for (Equipe equipe : listaDeEquipes) {
+            StringBuilder pilotosBuilder = new StringBuilder();
+            for (int i = 0; i < equipe.listaPilotos.size(); i++) {
+                if (i > 0) {
+                    if (i % 3 == 0) {
+                        pilotosBuilder.append("\n").append(StringUtils.repeat(" ", 31)).append("> ");
+                    } else {
+                        pilotosBuilder.append(", ");
+                    }
                 }
-                pilotosStr.append(piloto._nome);
+                pilotosBuilder.append(equipe.listaPilotos.get(i)._nome);
             }
-            System.out.println(equipe.nome + pilotosStr.toString());
-        });
+
+            FormatadorRelatorios.linha2Colunas(
+                    equipe.nome,
+                    pilotosBuilder.toString()
+            );
+        }
+        FormatadorRelatorios.rodape();
     }
 
     public void imprimeResultadoCampeonatoPiloto(Campeonato campeonato) {
         List<Piloto> resultado = campeonato.calculaPilotosCampeonato(campeonato.listadeCorridas, campeonato.listadePiloto);
         Collections.reverse(resultado);
-        System.out.println("Posição | Número | Nome | Equipe | Pontos");
+
+        FormatadorRelatorios.cabecalho("CAMPEONATO DE PILOTOS - CLASSIFICAÇÃO FINAL");
+        FormatadorRelatorios.cabecalho5Colunas("POS", "NÚM", "PILOTO", "EQUIPE", "PTS");
+
         for(int i = 0; i < resultado.size(); i++) {
             Piloto p = resultado.get(i);
-            System.out.printf("%-8d| %-7s| %-20s| %-15s| %d%n",
-                    i+1, p._numeroPiloto, p._nome, p._equipe.nome, p.pontos);
+            FormatadorRelatorios.linha5Colunas(
+                    (i+1),
+                    p._numeroPiloto,
+                    p._nome,
+                    p._equipe.nome,
+                    p.pontos
+            );
         }
-        System.out.println();
+        FormatadorRelatorios.rodape();
     }
-
 
     public void imprimeResultadoCampeonatoConstrutores(Campeonato campeonato) {
         List<Equipe> resultado = campeonato.calculaEquipesCampeonato(campeonato.listadeCorridas, campeonato.listadeEquipes);
         Collections.reverse(resultado);
-        System.out.println("Posição | Time | Pontos");
+
+        FormatadorRelatorios.cabecalho("CAMPEONATO DE CONSTRUTORES");
+        FormatadorRelatorios.cabecalho3Colunas("POS", "EQUIPE", "PTS");
+
         for(int i = 0; i < resultado.size(); i++) {
             Equipe e = resultado.get(i);
-            System.out.printf("%-8d| %-15s| %d%n", i+1, e.nome, e.pontos);
+            FormatadorRelatorios.linha3Colunas(
+                    (i+1),
+                    e.nome,
+                    e.pontos
+            );
         }
-        System.out.println();
+        FormatadorRelatorios.rodape();
     }
-
-
-
 
 }
