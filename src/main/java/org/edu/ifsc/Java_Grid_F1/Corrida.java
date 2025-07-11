@@ -11,8 +11,6 @@ public class Corrida{
         this.nomeCorrida = nomeCorrida;
     }
 
-    public static void cadastroGP(){
 
-    }
 
 }
