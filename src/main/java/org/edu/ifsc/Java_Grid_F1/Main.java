@@ -409,9 +409,12 @@ public class Main {
         listaDeCorridas.add(gp_Gra_Bretanha);
 
         //Instanciando um campeonato
-        Campeonato campeonatoF1 = new Campeonato(listaDeCorridas, listaPilotos, )
+        Campeonato campeonatoF1 = new Campeonato(listaDeCorridas, listaPilotos, listaDeEquipes);
 
-        GerenciadorMenu menu = new GerenciadorMenu()
+        GerenciadorMenu menu = new GerenciadorMenu(campeonatoF1);
+
+        //iniciando o menu
+        menu.exibirMenu();
 
     }
 }

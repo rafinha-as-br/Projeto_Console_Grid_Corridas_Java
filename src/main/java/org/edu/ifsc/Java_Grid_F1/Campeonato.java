@@ -90,8 +90,7 @@ public class Campeonato implements InterfaceFIA {
         //passa de corrida a corrida pegando as pontuações de cada equipe e somando
         corridas.forEach(this::calculaPontuacoesCorrida);
         List<Equipe> resultadosConstrutores = new ArrayList<>(listadeEquipes);
-        resultadosConstrutores.sort(Comparator.comparing(Equipe::getPontos));
-
+        resultadosConstrutores.sort(Comparator.comparing(Equipe::getPontos).reversed());
         return resultadosConstrutores;
     }
 
@@ -109,9 +108,7 @@ public class Campeonato implements InterfaceFIA {
         //passa de corrida a corrida pegando as pontuações de cada piloto e somando
         corridas.forEach(this::calculaPontuacoesCorrida);
         List<Piloto> resultadoPilotos = new ArrayList<>(listadePiloto);
-        resultadoPilotos.sort(Comparator.comparing(piloto -> piloto.pontos));
-
-
+        resultadoPilotos.sort(Comparator.comparing(piloto -> -piloto.pontos));
         return resultadoPilotos;
     }
 

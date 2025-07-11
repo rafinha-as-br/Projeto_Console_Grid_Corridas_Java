@@ -12,13 +12,6 @@ public interface InterfaceFIA {
     // Função de calcular pontuações de pilotos no campeonato (retorna uma lista de equipes ordenadas)
     List<Piloto> calculaPilotosCampeonato(List<Corrida> corridas, List<Piloto> pilotos);
 
-    // Função Exibir resultado de uma corrida (impressão)
-
-
-    // Função Exibir resultado campeonato (impressão)
-
-
-
 
 
 }
