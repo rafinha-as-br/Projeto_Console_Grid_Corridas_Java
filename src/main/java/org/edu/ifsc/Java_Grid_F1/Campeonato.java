@@ -23,6 +23,9 @@ public class Campeonato implements InterfaceFIA {
 
     @Override
     public void calculaPontuacoesCorrida(Corrida corrida) {
+        //zerando a pontuação dos pilotos para evitar bugs de somar pontos a partir de outra função
+        corrida.resultadoCorrida.forEach(piloto -> piloto.pontos=0);
+
         for (int i=0; i<corrida.resultadoCorrida.size(); i++){
             switch (i){
                 case 0:
