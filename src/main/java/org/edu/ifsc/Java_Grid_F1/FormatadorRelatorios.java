@@ -7,7 +7,7 @@ public class FormatadorRelatorios {
     private static final int LARGURA_TOTAL = 110;
     private static final String LINHA_DIVISORIA = StringUtils.repeat("-", LARGURA_TOTAL);
 
-    // Formatos para diferentes números de colunas
+    //formatos para diferentes números de colunas
     private static final String FORMATO_2COLUNAS = "| %-30s | %-72s |";
     private static final String FORMATO_3COLUNAS = "| %-8s | %-30s | %-10s |";
     private static final String FORMATO_5COLUNAS = "| %-5s | %-8s | %-25s | %-20s | %-8s |";
@@ -18,7 +18,7 @@ public class FormatadorRelatorios {
         System.out.println(LINHA_DIVISORIA);
     }
 
-    // Métodos para 2 colunas (equipes e pilotos)
+    //metodos para 2 colunas (equipes e pilotos)
     public static void cabecalho2Colunas(String col1, String col2) {
         System.out.printf(FORMATO_2COLUNAS + "%n", col1, col2);
         System.out.println(LINHA_DIVISORIA);
@@ -43,7 +43,7 @@ public class FormatadorRelatorios {
                 truncar(col3.toString(), 10));
     }
 
-    // Métodos para 5 colunas (resultados de corrida)
+    //metodos para 5 colunas (resultados de corrida)
     public static void cabecalho5Colunas(String col1, String col2, String col3, String col4, String col5) {
         System.out.printf(FORMATO_5COLUNAS + "%n", col1, col2, col3, col4, col5);
         System.out.println(LINHA_DIVISORIA);

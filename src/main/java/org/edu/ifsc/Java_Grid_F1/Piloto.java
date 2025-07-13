@@ -1,7 +1,5 @@
 package org.edu.ifsc.Java_Grid_F1;
 
-import java.util.List;
-
 public class Piloto{
     final String _nome;
     final String _numeroPiloto;

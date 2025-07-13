@@ -17,16 +17,8 @@ public class Equipe {
         this.pontos += pontos;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
     public int getPontos() {
         return pontos;
-    }
-
-    public List<Piloto> getListaPilotos() {
-        return listaPilotos;
     }
 
     public void setListaPilotos(List<Piloto> listaPilotos) {

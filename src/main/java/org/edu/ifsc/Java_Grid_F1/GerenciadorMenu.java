@@ -112,8 +112,8 @@ public class GerenciadorMenu {
 
         for(int i = 0; i < listaCorridas.size(); i++) {
             FormatadorRelatorios.linha2Colunas(
-                    (i+1),  // Código numérico
-                    listaCorridas.get(i).nomeCorrida  // Nome completo do GP
+                    (i),  // Codigo numerico
+                    listaCorridas.get(i).nomeCorrida  // nome completo do GP
             );
         }
         FormatadorRelatorios.rodape();
@@ -186,7 +186,6 @@ public class GerenciadorMenu {
 
     public void imprimeResultadoCampeonatoPiloto(Campeonato campeonato) {
         List<Piloto> resultado = campeonato.calculaPilotosCampeonato(campeonato.listadeCorridas, campeonato.listadePiloto);
-        Collections.reverse(resultado);
 
         FormatadorRelatorios.cabecalho("CAMPEONATO DE PILOTOS - CLASSIFICAÇÃO FINAL");
         FormatadorRelatorios.cabecalho5Colunas("POS", "NÚM", "PILOTO", "EQUIPE", "PTS");
